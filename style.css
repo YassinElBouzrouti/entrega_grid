@@ -1,0 +1,90 @@
+:root {
+    --primary-color: rgb(236, 236, 236);
+    --secondary-color: rgb(21, 21, 21);
+    --blue-color: #2bc5cd;
+    --orange-color: #ff693d;
+    --border: 2px solid var(--blue-color);
+    --spacing: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    min-height: 100vh;
+    display: grid;
+    grid-template:"header school student" 1fr "header main time" 1fr "alumni footer footer" 1fr / 1fr 1fr 1fr;
+    gap:20px;
+    padding: 2% 4%;
+  }
+  /* Resto del CSS */
+  header{
+    grid-area: header;
+    background-color: var(--blue-color);
+    display: grid;
+    grid-template:1fr 1fr / 1fr;
+    padding: 5%;
+    color: white;
+  }
+header>h1{
+    text-align: center;
+}
+  main{
+    grid-area: main;
+    border: var(--border);
+    color: #2bc5cd;
+    justify-content: center;
+    align-content: center;
+  }
+  h2{
+    grid-area: h2;
+    text-align: center;
+  }
+  footer{
+    background-color: var(--orange-color);
+    grid-area: footer;
+    display: grid;
+    grid-template: 1fr 2fr 1fr / 1fr;
+    color:white;
+    padding: 3%;
+  }
+  .school {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+    grid-area: school;
+  }
+  
+  .student {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+    grid-area: student;
+  }
+  
+  .time {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+    grid-area: time;
+  }
+  
+  .alumni {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+    grid-area: alumni;
+  }
+  
+  .alumni,
+  .school,
+  .student,
+  .time {
+    background-size: cover;
+  }
+
+  @media ((min-width:500px) and (max-width:800px)){
+    body{
+        grid-template: "header header main"1fr "header header main"1fr "alumni footer footer"1fr / 1fr 1fr 1fr;
+        padding:8px 12px;
+    }
+  }
+  @media(max-width:500px){
+    body{
+        grid-template: "header"1fr "main"1fr "footer"1fr / 1fr ;
+    }
+  }
